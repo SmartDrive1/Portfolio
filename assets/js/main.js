@@ -29,7 +29,7 @@ const sr= ScrollReveal({
     origin:'top',
     distance:'80px',
     duration: 2000,
-    reset: true
+    reset: false
 })
 
 // Scroll Home
@@ -54,3 +54,34 @@ sr.reveal('.work__img',{interval:200})
 
 //Scroll Contact
 sr.reveal('.contact__input',{interval:200})
+
+// Moving Nav Bar when Scrolled
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section"); // Select all sections
+    const navLinks = document.querySelectorAll(".nav__menu a"); // Select all nav links
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    let id = entry.target.getAttribute("id");
+
+                    // Remove active class from all links
+                    navLinks.forEach((link) => {
+                        link.classList.remove("active");
+                    });
+
+                    // Add active class to the current section's nav link
+                    document
+                        .querySelector(`.nav__menu a[href="#${id}"]`)
+                        .classList.add("active");
+                }
+            });
+        },
+        { threshold: 0.6 } // Trigger when 60% of section is in view
+    );
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+});
