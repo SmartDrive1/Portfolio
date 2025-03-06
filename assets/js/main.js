@@ -43,14 +43,23 @@ sr.reveal('.about__img',{})
 sr.reveal('.about__subtitle',{delay:200})
 sr.reveal('.about__text',{delay:400})
 
+// Scroll Projects
+sr.reveal('.projects__subtitle',{})
+sr.reveal('.projects__images img',{interval:200})
+sr.reveal('.project__date',{delay:200})
+sr.reveal('.project__list li',{interval:200})
+
+// Work Experience
+sr.reveal('.work__box',{interval:300})
+
 //Scroll skills
 sr.reveal('.skills__subtitle',{})
 sr.reveal('.skills__text',{delay:200})
 sr.reveal('.skills__data',{interval:200})
 sr.reveal('.skills_img',{delay:200})
 
-//Scroll Work
-sr.reveal('.work__img',{interval:200})
+//Scroll Languages
+sr.reveal('.languages__data',{interval:100})
 
 //Scroll Contact
 sr.reveal('.contact__input',{interval:200})
