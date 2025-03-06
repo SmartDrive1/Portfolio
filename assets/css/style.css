@@ -139,6 +139,9 @@ img{
         background-color: var(--second-color);
         transition: .5s;
     }
+    .home__img img{
+        margin-top: -500px;
+    }
 }
 
 .nav__item{
@@ -490,20 +493,40 @@ img{
     }
     .home__img {
         position: absolute;
-        right: 19%;
+        right: 15%;
         bottom: auto;
         top: 20%;
+    }
+    .about__container {
+        gap: 1rem; /* Reduce space between image and text */
     }
     
     .about__img img{
         width: 300px;
         max-width: 100%;
-        margin-left: 30rem;
         height: auto;
     }
     
     .about__text{
         padding-right: 10rem;
         max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .about__container {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about__img {
+        justify-self: end;
+    }
+
+    .about__text {
+        max-width: 90%;
     }
 }
