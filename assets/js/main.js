@@ -66,8 +66,8 @@ sr.reveal('.contact__input',{interval:200})
 
 // Moving Nav Bar when Scrolled
 document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section"); // Select all sections
-    const navLinks = document.querySelectorAll(".nav__menu a"); // Select all nav links
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav__menu a"); 
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -75,12 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (entry.isIntersecting) {
                     let id = entry.target.getAttribute("id");
 
-                    // Remove active class from all links
                     navLinks.forEach((link) => {
                         link.classList.remove("active");
                     });
 
-                    // Add active class to the current section's nav link
                     document
                         .querySelector(`.nav__menu a[href="#${id}"]`)
                         .classList.add("active");
