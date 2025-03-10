@@ -124,12 +124,27 @@ img{
 .nav{
     height: var(--header-height);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-weight: var(--font-semi);
 }
 @media screen and (max-width: 768px) {
-    .nav__menu{
+    .nav {
+        justify-content: space-between; /* Ensures the menu and icon are at opposite ends */
+        padding: 0 1rem; /* Adds spacing */
+    }
+
+    .nav__toggle {
+        position: absolute;
+        right: 1rem; /* Positions it at the rightmost */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .nav__menu {
+        justify-content: end;
         position: fixed;
         top: var(--header-height);
         right: -100%;
@@ -139,7 +154,8 @@ img{
         background-color: var(--second-color);
         transition: .5s;
     }
-    .home__img img{
+
+    .home__img img {
         margin-top: -500px;
     }
 }
